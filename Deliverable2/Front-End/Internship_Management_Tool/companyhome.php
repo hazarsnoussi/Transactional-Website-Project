@@ -91,35 +91,57 @@
         <h2>Internships</h2>
         <p>
       
-        <table class="table table-striped">
-          <tbody>
+        <table class="table table-striped" style="text-align: center;">
+            <thead>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
+                <td>Post Name</td>
+                <td>Post Information</td>
+                <td>Post Date</td>
+                <td>Number of Applicants</td>
+                <td>Edit</td>
+                <td>Delete</td>
             </tr>
-            <tr>
-              <td></td>
-              <td>
-                Short Description: 
-              </td>
-              <td></td>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Internship1</td>
+                <td>Info</td>
+                <td>12-04-2002</td>
+                <td>7</td>
+                <td><img src="img/icons8-edit-64.png" width="width" height="height" alt="alt"/></td>
+                <td><img src="img/icons8-delete-100.png" width="width" height="height" alt="alt"/></td>
             </tr>
-           
-            <tr>
-              <td></td>
-              <td></td>
-              <td>
-                <form method="GET" action= "viewDetail.php">
-                <button class ="btn btn-danger"><a  style ="color:white;"href ="viewDetail.php?detailId='$internshipID'">View Details</button>
-                </form>
-                
-              </td>
+              <tr>
+                <td>Internship2</td>
+                <td>Info</td>
+                <td>09-09-2022</td>
+                <td>10</td>
+                <td><img src="img/icons8-edit-64.png" width="width" height="height" alt="alt"/></td>
+                <td><img src="img/icons8-delete-100.png" width="width" height="height" alt="alt"/></td>
             </tr>
-            
-          </tbody>
+              <tr>
+                <td>Internship3</td>
+                <td>Info</td>
+                <td>07-09-2022</td>
+                <td>5</td>
+                <td><img src="img/icons8-edit-64.png" width="width" height="height" alt="alt"/></td>
+                <td><img src="img/icons8-delete-100.png" width="width" height="height" alt="alt"/></td>
+            </tr>
+              <tr>
+                <td>Internship4</td>
+                <td>Info</td>
+                <td>06-10-2022</td>
+                <td>7</td>
+                <td><img src="img/icons8-edit-64.png" width="width" height="height" alt="alt"/></td>
+                <td><img src="img/icons8-delete-100.png" width="width" height="height" alt="alt"/></td>
+            </tr>
+            </tbody>
         </table>
 
+        <br>
+        <form action="addinternship.php" method="POST">
+              <button type="submit" class="btn btn-primary" style="background-color: #9c000d; width: 200px">Add Internship</button>
+        </form>
 
         <!-- End of additional code here -->
 
