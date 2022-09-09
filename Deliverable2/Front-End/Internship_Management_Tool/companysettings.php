@@ -69,104 +69,41 @@
       <!-- Add additional code here -->
 
 
-        <table class="table table-striped">
-          <tbody>
-            <tr>
-              <td><h3>Profile<h3></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-            
-              <?php
-$sqlImg = "SELECT * FROM filesuser WHERE userID = '$uid' AND type = 'image' ";
-$query = mysqli_query($connection,$sqlImg);
-$resultImg = mysqli_query($connection,$sqlImg);
-$rowImg = mysqli_fetch_assoc($resultImg);
-echo "<div>";
-$fileImg = str_replace("'","","uploads/images/profileImg'.$uid'");
-$fileImg =str_replace(".","",$fileImg);
-$fileImg = $fileImg.'.jpg';
-                                 //profileImg2203102jpg
-//echo $fileImg;
-//if ($rowImg['status']==0){echo "<img src = 'uploads/profileImg'.$uid.'jpg'>";}
-if ($rowImg['status']==1){echo "<img src='$fileImg'>";}
-else{ echo "<img src ='uploads/images/profiledefault.jpg'>";}
-echo "<br>".$fullName;
-$sqli  = "SELECT * FROM student WHERE studentID = $uid ";
-$queryi = mysqli_query($connection,$sqli);
-$row = mysqli_fetch_assoc($queryi);
-?>
-<?php echo "<form action='status.php' method='POST' enctype='multipart/form-data'><p><input type='file' name='file'></p>
-		<p><input type='submit' name='upload'> Upload</button></p></form>"; ?>
-		<form name = "f" action= "#" method="POST">
-				<table  style="border:1; width:50%;height:90%;">
-					<tr>
-						<td><label >First Name:</label></td>
-						<td><input type="text" size="50" name="firstName" value= <?php echo $row['firstName']; ?> ></td>
-					</tr>
-					<tr>
-						<td><label >Last Name:</label></td>
-						<td><input type="text" size="50" name="lastName" value= <?php echo $row['lastName']; ?> ></td>
-					</tr>
-					<tr>
-						<td><label >Date of birth:</label></td>
-						<td><input type="text" size="50" name="dob" value= <?php echo $row['dateOfBirth']; ?>></td>
-					</tr>
-					<tr>
-						<td><label>E-mail:</label></td>
-						<td><input type="email" size="50" name="email" value= <?php echo $row['email']; ?> ></td>
-					</tr>
-					<tr>
-						<td><label>Password:</label></td>
-						<td><input type="text" size="50" name="password" value= <?php echo $row['password']; ?> ></td>
-					</tr>
-					<tr>
-						<td><label>Phone Number:</label></td>
-						<td><input type="tel" size="50" name="phone" value= <?php echo $row['phoneNumber']; ?> ></td>
-					</tr>
-					<tr>
-						<td><label>CollegeID:</label></td>
-						<td><input type="number" size="50" name="stdID" value= <?php echo $row['studentID'];?> disabled></td>
-					</tr>
-					<tr>
-						<td><label>R-Score:</label></td>
-						<td><input type="text" size="50" name="rscore" value= <?php echo $row['RScore']; ?> ></td>
-					</tr>
-					<tr>
-						<td><label>Cohort:</label></td>
-						<td> 
-							<?php
-								$sql1 = "SELECT programTitle FROM cohort INNER JOIN student ON student.cohortID = cohort.cohortID ;";
-								$query1 = mysqli_query($connection,$sql1);
-									$row1=mysqli_fetch_assoc($query1); ?>	
-							<input type="text" size="50"name="programTitle" value= <?php echo $row1['programTitle']; ?> >	
-						</td>
-					</tr>				
-					<tr>
-						<td><label>Department:</label></td>
-						<td><input type="text" size="50"name="deptId" value= <?php echo $row['department']; ?> disabled></td>
-					</tr>
-  <script>function selectCohort(){if(!document.f.lov.selectedIndex<0) {alert("Please select a cohort.");return false;}}</script>
-	<tr>					
-  <td><input type="submit" size="50" name ="updateData" onclick="selectCohort();"></td>
-  </tr>
-				</table>
-			</form>
-              
-              <td></td>
-            </tr>
-         
-          </tbody>
-        </table>
+        <h3>Company Information</h3>
+        <br><br>
 
+        <form action="" method="POST" style="width:6in">
+  <div class="mb-3">
+    <p><label for="about" class="form-label">About</label></p>
+    <input type="text" class="form-control" name="about" aria-describedby="aboutHelp">
+    <div id="aboutHelp" class="form-text">Provide information about your company.</div>
+  </div>
+  <br>
+  <div class="mb-3">
+    <label for="Email" class="form-label">Email</label>
+    <input type="mail" class="form-control" name="email">
+  </div>
+  <div class="mb-3">
+    <label for="PhoneNumber" class="form-label">Phone Number</label>
+    <input type="text" class="form-control" name="phoneNumber">
+  </div>
+    <div class="mb-3">
+    <label for="FaxNumber" class="form-label">Fax Number</label>
+    <input type="text" class="form-control" name="faxNumber">
+  </div>          
+      
+    <div class="mb-3">
+    <label for="address" class="form-label">Address</label>
+    <input type="text" class="form-control" name="address">
+  </div> <br>         
+  <button type="submit" class="btn btn-primary" style="background-color: #9c000d; width: 175px">Submit</button>
+</form>
 
         <!-- End of additional code here -->
 
       </div>
 
-     
+    
 
       <br><br><br><br><br>
       <footer class="foot">
